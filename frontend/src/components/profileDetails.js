@@ -7,7 +7,8 @@ import {
   ScrollView,
   TextInput,
   Button,
-  Alert
+  Alert,
+  TouchableOpacity,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
@@ -59,13 +60,16 @@ export default function ProfileDetails() {
       username: Name,
       salonName: SalonN,
       address: AddressS,
-      city: City
+      city: City,
     };
 
     try {
-      const response = await axios.put(`${BaseUrl}/api/users/updateUser/${userId}`, updateData);
+      const response = await axios.put(
+        `${BaseUrl}/api/users/updateUser/${userId}`,
+        updateData
+      );
       const updatedUserData = response.data;
-      await AsyncStorage.setItem('userData', JSON.stringify(updatedUserData));
+      await AsyncStorage.setItem("userData", JSON.stringify(updatedUserData));
       setUserData(updatedUserData);
       Alert.alert("Success", "Profile updated successfully!");
     } catch (error) {
@@ -92,7 +96,7 @@ export default function ProfileDetails() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={logo} style={styles.logoImage} />
-        <Text style={styles.headerText}>{Name || 'Your Name'}</Text>
+        <Text style={styles.headerText}>{Name || "Your Name"}</Text>
       </View>
       <View style={styles.content}>
         <TextInput
@@ -127,10 +131,16 @@ export default function ProfileDetails() {
               value={City}
               onChangeText={setCity}
             />
-            <Button title="Delete Salon" onPress={deleteSalon} color="#ff0000" />
+            <Button
+              title="Delete Salon"
+              onPress={deleteSalon}
+              color="#ff0000"
+            />
           </>
         )}
-        <Button title="Update Profile" onPress={updateProfile} color="#ff007f" />
+        <TouchableOpacity style={styles.updateButton} onPress={updateProfile}>
+          <Text style={styles.updateButtonText}>Update Profile</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -144,28 +154,57 @@ const styles = StyleSheet.create({
   header: {
     alignItems: "center",
     backgroundColor: "#ff007f",
-    paddingVertical: 20,
+    paddingVertical: 40,
   },
   logoImage: {
     width: 110,
-    height: 100,
+    height: 110,
+    marginTop: 20,
+    borderRadius: 100,
   },
   headerText: {
-    fontSize: 24,
+    fontSize: 30,
+    fontFamily: "serif",
+    textAlign: "center",
     fontWeight: "bold",
     color: "#fff",
+
   },
   content: {
     padding: 20,
+    alignItems: "center",
+    marginTop: 50
   },
   input: {
     height: 50,
+    width: "85%",
     backgroundColor: "#fff",
-    borderRadius: 10,
+    borderRadius: 15,
     paddingHorizontal: 15,
-    marginBottom: 20,
+    marginVertical: 20,
     borderColor: "#ff007f",
     borderWidth: 1,
     fontSize: 16,
   },
+  updateButton: {
+    height: 50,
+    width: '80%', // Adjust the width as needed
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#ff007f", // Pink color for the button
+    borderRadius: 25, // Half of height to get a fully rounded button
+    marginTop: 150, // Add some margin at the top
+    shadowColor: "#ff007f", // Pink shadow to match the button
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 4,
+},
+
+updateButtonText: {
+    color: "#ffffff", // White text color
+    fontSize: 18,
+    fontWeight: 'bold',
+}
+
 });
