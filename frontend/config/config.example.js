@@ -1,0 +1,1 @@
+export  const BaseUrl = "http://<your_URI_here>:5001"
