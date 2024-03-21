@@ -1,1 +1,2 @@
-export  const BaseUrl = "http://<your_URI_here>:5001"
+export  const BaseUrl = "http://<here>:5002"
+// add your physical IP Address here
