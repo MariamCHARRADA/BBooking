@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useCallback} from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation,useFocusEffect } from "@react-navigation/native";
 
 const logo = require("../../assets/BB.png");
 
 export default function ProfileScreen() {
     const [userData, setUserData] = useState(null);
     const navigation = useNavigation();
-
+    const fetchUserData = async () => {
+        try {
+            const userData = await AsyncStorage.getItem("userData");
+            const UserData1 = JSON.parse(userData);
+            setUserData(UserData1);
+        } catch (e) {
+            console.log("error fetching user data", e);
+        }
+    };
     useEffect(() => {
-        const fetchUserData = async () => {
-            try {
-                const userData = await AsyncStorage.getItem("userData");
-                const UserData1 = JSON.parse(userData);
-                setUserData(UserData1);
-            } catch (e) {
-                console.log("error fetching user data", e);
-            }
-        };
 
         fetchUserData();
     }, []);
@@ -32,18 +31,25 @@ export default function ProfileScreen() {
             console.log("error logging out", e);
         }
     };
+    useFocusEffect(
+        useCallback(() => {
+            fetchUserData();
 
-    return (
+
+       
+        }, [])
+    );    return (
         <View style={styles.container}>
+                        <ScrollView contentContainerStyle={styles.scrollView}>
+
                         <View style={styles.header}>
               <Image source={logo} style={styles.logoImage} />
                 <Text style={styles.headerText}>Welcome, {userData?.username || 'User' }</Text>
               </View>
-            <ScrollView contentContainerStyle={styles.scrollView}>
-                <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate("ProfData")}>
+                <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate("ProfData", { userId: userData})}>
                     <Text style={styles.TextView}>My Profile</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate("Reserv", { userId: userData?._id })}>
+                <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate("Reserv", { userId: userData})}>
                     <Text style={styles.TextView}>My Reservations</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.logout} onPress={handleLogout}>
@@ -64,11 +70,8 @@ const styles = StyleSheet.create({
     scrollView: {
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: 100,
     },
     header: {
-      height: "25%",
-      width: "100%",
       alignItems: "center"
     },
     logoImage: {

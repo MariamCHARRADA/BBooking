@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useCallback} from "react";
 import {
   View,
   TextInput,
@@ -6,11 +6,11 @@ import {
   Text,
   FlatList,
   StyleSheet,
-  TouchableOpacity,
+  TouchableOpacity,  
 
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation,useFocusEffect } from "@react-navigation/native";
 
 import axios from "axios";
 import { BaseUrl } from "../../config/config";
@@ -68,7 +68,14 @@ const SearchScreen = () => {
 
     setFilteredSalons(filtered);
   }, [searchTerm, selectedCity, salons, cities]);
+  useFocusEffect(
+    useCallback(() => {
+      fetchSalons();
 
+
+   
+    }, [])
+); 
   return (
 
       <View style={styles.container}>

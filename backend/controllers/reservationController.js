@@ -6,7 +6,18 @@ const Salon = require("../models/SalonModel");
 //@route GET /api/reservations
 //@access Private
 const getReservations = asyncHandler(async (req, res) => {
-    const reservations = await Reservation.find();
+    const reservations = await Reservation.find()
+    .populate({
+        path: 'Salon',
+        select: 'User Name' 
+       
+      })
+    .populate('Service', 'Name') 
+    .populate('User', 'username'); 
+
+
+ 
+
     res.status(200).json(reservations);
 });
 

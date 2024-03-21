@@ -19,21 +19,51 @@ import moment from "moment";
 const MyReservations = ({ route }) => {
   const { userId } = route.params;
   const [Reserv, setReserv] = useState([]);
+
   const navigation = useNavigation();
 
   const fetchSalons = async () => {
     try {
       const response = await axios.get(
-        `${BaseUrl}/api/reservations/getUserReservation/user/${userId}`
+        `${BaseUrl}/api/reservations/getUserReservation/user/${userId?._id}`
       );
-      setReserv(response.data);
-    } catch (error) {
+      const now = new Date();
+      const sortedReservations = response.data.sort((a, b) => {
+        const dateA = new Date(a.Date);
+        const dateB = new Date(b.Date);
+        return (dateA > now ? Number.MAX_SAFE_INTEGER : dateA - now) - 
+               (dateB > now ? Number.MAX_SAFE_INTEGER : dateB - now);
+      });
+      setReserv(sortedReservations);
+      } catch (error) {
       console.error("Error fetching salons:", error);
     }
   };
-
+  const fetchReservForOwner = async () => {
+    try {
+      const response = await axios.get(
+        `${BaseUrl}/api/reservations/getReservations`
+      );
+      const now = new Date();
+      const sortedReservations = response.data
+        .filter(reservation => reservation.Salon && reservation.Salon.User === userId._id)
+        .sort((a, b) => {
+          const dateA = new Date(a.Date);
+          const dateB = new Date(b.Date);
+          return (dateA > now ? Number.MAX_SAFE_INTEGER : dateA - now) - 
+                 (dateB > now ? Number.MAX_SAFE_INTEGER : dateB - now);
+        });
+      setReserv(sortedReservations);
+    } catch (error) {
+      console.error("Error fetching reservations:", error);
+    }
+  };
   useEffect(() => {
-    fetchSalons();
+    if (userId.role === "owner") {
+      fetchReservForOwner();
+    } else {
+      fetchSalons();
+    }
   }, []);
 
   const deleteReservation = async (reservationId) => {
@@ -67,29 +97,66 @@ const MyReservations = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Reservations</Text>
-      <FlatList
-        data={Reserv}
-        numColumns={3}
-        keyExtractor={(item) => item._id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => handleDeleteReservation(item._id)}
-          >
-            <Text style={styles.cardText}>
-              {item.Salon.Name} - {item.Service.Name}
-            </Text>
-            <Text style={styles.cardText}>
-              {moment(item.Date).format("YYYY-MM-DD")} - {item.Time}
-            </Text>
-          </TouchableOpacity>
-        )}
-      />
+      {
+  userId.role === 'owner' ? (
+    <FlatList
+    data={Reserv}
+    numColumns={3}
+    keyExtractor={(item) => item._id}
+    renderItem={({ item }) => (
+      
+      <View
+        style={styles.card}
+        onPress={() => handleDeleteReservation(item._id)}
+      >
+        <Text style={styles.TextRes}>{item.User.username}</Text>
+        <Text style={styles.cardText}>
+          {item.Salon.Name} - {item.Service.Name}
+        </Text>
+        <Text style={styles.cardText}>
+          {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
+          {item ? item.Time : null}
+        </Text>
+      </View>
+    )}
+  />
+  ):(
+    <FlatList
+    data={Reserv}
+    numColumns={3}
+    keyExtractor={(item) => item._id}
+    renderItem={({ item }) => (
+      
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() => handleDeleteReservation(item._id)}
+      >
+        <Text style={styles.TextRes}>{item.User.username}</Text>
+        <Text style={styles.cardText}>
+          {item.Salon.Name} - {item.Service.Name}
+        </Text>
+        <Text style={styles.cardText}>
+          {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
+          {item ? item.Time : null}
+        </Text>
+      </TouchableOpacity>
+    )}
+  />
+  )}
+    
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  TextRes: {
+    fontSize: 13,
+    fontFamily: "serif",
+    color: "#ff0070",
+  },
+  Section: {
+    paddingHorizontal: 3,
+  },
   title: {
     textAlign: "center",
     fontFamily: "serif",
@@ -106,9 +173,8 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
     shadowRadius: 2,
-    elevation: 3,
     backgroundColor: "#fff",
-    padding: 10,
+    padding: 0,
     alignItems: "center",
     justifyContent: "center",
     height: 110,
@@ -122,9 +188,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff4f2",
-    paddingHorizontal: 30,
     paddingTop: 100,
-    justifyContent: "space-between",
   },
 });
 

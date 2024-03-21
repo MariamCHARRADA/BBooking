@@ -101,10 +101,24 @@ const getSalon = asyncHandler(async (req, res) => {
   }
 });
 
+
+const getUserSalon = asyncHandler(async (req, res) => {
+  try{
+  const userId = req.params.id;
+  console.log('UserID:', userId); 
+  const userRSalon = await Salon.find({ User: userId });
+  console.log('Salon:', userRSalon); 
+  res.status(200).json(userRSalon);
+}
+catch(e){
+  console.log("error ",e)
+}
+});
 //@desc Update a salon
 //@route PUT /api/salons/:id
 //@access Private
 const updateSalon = asyncHandler(async (req, res) => {
+  try{
   const { Name, City, Address, Services, User, Open, Close } = req.body;
   const salon = await Salon.findById(req.params.id);
   if (!salon) {
@@ -122,6 +136,11 @@ const updateSalon = asyncHandler(async (req, res) => {
 
   const updatedSalon = await salon.save();
   res.status(200).json(updatedSalon);
+}
+catch(e){
+  res.status(500).json({ message: e.message });
+
+}
 });
 
 //@desc Delete a salon
@@ -141,4 +160,4 @@ const deleteSalon = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getSalons, createSalon, getSalon, updateSalon, deleteSalon };
+module.exports = { getSalons, createSalon, getSalon, updateSalon, deleteSalon,getUserSalon };

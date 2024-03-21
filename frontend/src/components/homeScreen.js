@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useCallback} from "react";
 import {
   View,
   Text,
@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import axios from "axios";
 import { BaseUrl } from "../../config/config";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation ,useFocusEffect} from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const logo = require("../../assets/logo3.png");
