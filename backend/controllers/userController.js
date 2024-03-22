@@ -102,39 +102,41 @@ const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
-      res.status(404);
-      throw new Error("User not found");
+    res.status(404);
+    throw new Error("User not found");
   }
 
   // Check if the email already exists in the database (except for the current user)
-  if (email && await User.findOne({ email: email, _id: { $ne: req.params.id } })) {
-      res.status(400);
-      throw new Error("Email already in use");
+  if (
+    email &&
+    (await User.findOne({ email: email, _id: { $ne: req.params.id } }))
+  ) {
+    res.status(400);
+    throw new Error("Email already in use");
   }
 
   // Update user with new values, excluding password and role
   const updatedUser = await User.findByIdAndUpdate(
-      req.params.id,
-      {
-          username: username || user.username,
-          email: email || user.email,
-      },
-      { new: true } // Return the updated document
+    req.params.id,
+    {
+      username: username || user.username,
+      email: email || user.email,
+    },
+    { new: true } // Return the updated document
   );
 
   if (updatedUser) {
-      res.status(200).json(updatedUser);
+    res.status(200).json(updatedUser);
   } else {
-      res.status(400);
-      throw new Error("Unable to update user");
+    res.status(400);
+    throw new Error("Unable to update user");
   }
 });
-
 
 module.exports = {
   registerUser,
   loginUser,
   getUsers,
   deleteUser,
-  updateUser
+  updateUser,
 };

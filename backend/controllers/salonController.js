@@ -8,17 +8,19 @@ const mongoose = require("mongoose");
 //@access Private
 const getSalons = asyncHandler(async (req, res) => {
   try {
-    const salons = await Salon.find().populate({
-      path: "User",
-      select: "email",
-    }).populate({
-      path: "Services",
-      select: "Name",
-    })
-    .populate({
-      path: "City",
-      select: "Name",
-    });
+    const salons = await Salon.find()
+      .populate({
+        path: "User",
+        select: "email",
+      })
+      .populate({
+        path: "Services",
+        select: "Name",
+      })
+      .populate({
+        path: "City",
+        select: "Name",
+      });
     res.status(200).json(salons);
   } catch {
     return res.status(500).json({ error: "Internal Server Error" });
@@ -101,46 +103,42 @@ const getSalon = asyncHandler(async (req, res) => {
   }
 });
 
-
 const getUserSalon = asyncHandler(async (req, res) => {
-  try{
-  const userId = req.params.id;
-  console.log('UserID:', userId); 
-  const userRSalon = await Salon.find({ User: userId });
-  console.log('Salon:', userRSalon); 
-  res.status(200).json(userRSalon);
-}
-catch(e){
-  console.log("error ",e)
-}
+  try {
+    const userId = req.params.id;
+    console.log("UserID:", userId);
+    const userRSalon = await Salon.find({ User: userId });
+    console.log("Salon:", userRSalon);
+    res.status(200).json(userRSalon);
+  } catch (e) {
+    console.log("error ", e);
+  }
 });
 //@desc Update a salon
 //@route PUT /api/salons/:id
 //@access Private
 const updateSalon = asyncHandler(async (req, res) => {
-  try{
-  const { Name, City, Address, Services, User, Open, Close } = req.body;
-  const salon = await Salon.findById(req.params.id);
-  if (!salon) {
-    res.status(404);
-    throw new Error("Salon not found");
+  try {
+    const { Name, City, Address, Services, User, Open, Close } = req.body;
+    const salon = await Salon.findById(req.params.id);
+    if (!salon) {
+      res.status(404);
+      throw new Error("Salon not found");
+    }
+
+    salon.Name = Name || salon.Name;
+    salon.City = City || salon.City;
+    salon.Address = Address || salon.Address;
+    salon.Services = Services || salon.Services;
+    salon.User = User || salon.User;
+    salon.Open = Open || salon.Open;
+    salon.Close = Close || salon.Close;
+
+    const updatedSalon = await salon.save();
+    res.status(200).json(updatedSalon);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
   }
-
-  salon.Name = Name || salon.Name;
-  salon.City = City || salon.City;
-  salon.Address = Address || salon.Address;
-  salon.Services = Services || salon.Services;
-  salon.User = User || salon.User;
-  salon.Open = Open || salon.Open;
-  salon.Close = Close || salon.Close;
-
-  const updatedSalon = await salon.save();
-  res.status(200).json(updatedSalon);
-}
-catch(e){
-  res.status(500).json({ message: e.message });
-
-}
 });
 
 //@desc Delete a salon
@@ -160,4 +158,11 @@ const deleteSalon = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getSalons, createSalon, getSalon, updateSalon, deleteSalon,getUserSalon };
+module.exports = {
+  getSalons,
+  createSalon,
+  getSalon,
+  updateSalon,
+  deleteSalon,
+  getUserSalon,
+};
