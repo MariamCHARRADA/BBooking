@@ -21,7 +21,6 @@ const MyReservations = ({ route }) => {
   const [Reserv, setReserv] = useState([]);
 
   const navigation = useNavigation();
-
   const fetchSalons = async () => {
     try {
       const response = await axios.get(
@@ -29,16 +28,24 @@ const MyReservations = ({ route }) => {
       );
       const now = new Date();
       const sortedReservations = response.data.sort((a, b) => {
-        const dateA = new Date(a.Date);
-        const dateB = new Date(b.Date);
-        return (dateA > now ? Number.MAX_SAFE_INTEGER : dateA - now) - 
-               (dateB > now ? Number.MAX_SAFE_INTEGER : dateB - now);
+        // Extract just the date part
+        const datePartA = a.Date.split("T")[0];
+        const datePartB = b.Date.split("T")[0];
+
+        // Combine the date part with the time for comparison
+        const dateTimeA = new Date(`${datePartA}T${a.Time}`);
+        const dateTimeB = new Date(`${datePartB}T${b.Time}`);
+
+
+        // Sort based on the full date-time
+        return dateTimeA - dateTimeB; // For ascending order
       });
       setReserv(sortedReservations);
-      } catch (error) {
+    } catch (error) {
       console.error("Error fetching salons:", error);
     }
   };
+
   const fetchReservForOwner = async () => {
     try {
       const response = await axios.get(
@@ -46,12 +53,18 @@ const MyReservations = ({ route }) => {
       );
       const now = new Date();
       const sortedReservations = response.data
-        .filter(reservation => reservation.Salon && reservation.Salon.User === userId._id)
+        .filter(
+          (reservation) =>
+            reservation.Salon && reservation.Salon.User === userId._id
+        )
         .sort((a, b) => {
           const dateA = new Date(a.Date);
           const dateB = new Date(b.Date);
-          return (dateA > now ? Number.MAX_SAFE_INTEGER : dateA - now) - 
-                 (dateB > now ? Number.MAX_SAFE_INTEGER : dateB - now);
+
+          return (
+            (dateA > now ? Number.MAX_SAFE_INTEGER : dateA - now) -
+            (dateB > now ? Number.MAX_SAFE_INTEGER : dateB - now)
+          );
         });
       setReserv(sortedReservations);
     } catch (error) {
@@ -97,53 +110,49 @@ const MyReservations = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Reservations</Text>
-      {
-  userId.role === 'owner' ? (
-    <FlatList
-    data={Reserv}
-    numColumns={3}
-    keyExtractor={(item) => item._id}
-    renderItem={({ item }) => (
-      
-      <View
-        style={styles.card}
-        onPress={() => handleDeleteReservation(item._id)}
-      >
-        <Text style={styles.TextRes}>{item.User.username}</Text>
-        <Text style={styles.cardText}>
-          {item.Salon.Name} - {item.Service.Name}
-        </Text>
-        <Text style={styles.cardText}>
-          {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
-          {item ? item.Time : null}
-        </Text>
-      </View>
-    )}
-  />
-  ):(
-    <FlatList
-    data={Reserv}
-    numColumns={3}
-    keyExtractor={(item) => item._id}
-    renderItem={({ item }) => (
-      
-      <TouchableOpacity
-        style={styles.card}
-        onPress={() => handleDeleteReservation(item._id)}
-      >
-        <Text style={styles.TextRes}>{item.User.username}</Text>
-        <Text style={styles.cardText}>
-          {item.Salon.Name} - {item.Service.Name}
-        </Text>
-        <Text style={styles.cardText}>
-          {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
-          {item ? item.Time : null}
-        </Text>
-      </TouchableOpacity>
-    )}
-  />
-  )}
-    
+      {userId.role === "owner" ? (
+        <FlatList
+          data={Reserv}
+          numColumns={3}
+          keyExtractor={(item) => item._id}
+          renderItem={({ item }) => (
+            <View
+              style={styles.card}
+              onPress={() => handleDeleteReservation(item._id)}
+            >
+              <Text style={styles.TextRes}>{item.User.username}</Text>
+              <Text style={styles.cardText}>
+                {item.Salon.Name} - {item.Service.Name}
+              </Text>
+              <Text style={styles.cardText}>
+                {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
+                {item ? item.Time : null}
+              </Text>
+            </View>
+          )}
+        />
+      ) : (
+        <FlatList
+          data={Reserv}
+          numColumns={3}
+          keyExtractor={(item) => item._id}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => handleDeleteReservation(item._id)}
+            >
+              <Text style={styles.TextRes}>{item.User.username}</Text>
+              <Text style={styles.cardText}>
+                {item.Salon.Name} - {item.Service.Name}
+              </Text>
+              <Text style={styles.cardText}>
+                {item ? moment(item.Date).format("YYYY-MM-DD") : null} -{" "}
+                {item ? item.Time : null}
+              </Text>
+            </TouchableOpacity>
+          )}
+        />
+      )}
     </View>
   );
 };
@@ -174,7 +183,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowRadius: 2,
     backgroundColor: "#fff",
-    padding: 0,
     alignItems: "center",
     justifyContent: "center",
     height: 110,

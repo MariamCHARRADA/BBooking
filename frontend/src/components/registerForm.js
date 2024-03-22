@@ -8,7 +8,9 @@ import {
   View,
   TouchableOpacity,
   ScrollView,
-  FlatList,Modal,ActivityIndicator
+  FlatList,
+  Modal,
+  ActivityIndicator,
 } from "react-native";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
@@ -26,8 +28,8 @@ const google = require("../../assets/google.png");
 export default function RegisterForm() {
   const navigation = useNavigation();
   const [checkedItems, setCheckedItems] = useState({});
-  const [modalVisible1, setModalVisible1] = useState(false); 
-   const [email, setEmail] = useState("");
+  const [modalVisible1, setModalVisible1] = useState(false);
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("client");
@@ -149,7 +151,7 @@ export default function RegisterForm() {
             formData.append("Open", openTime.getTime());
             formData.append("Close", closeTime.getTime());
             selectedServiceIds.forEach((serviceId) => {
-              formData.append("Services[]", serviceId); 
+              formData.append("Services[]", serviceId);
             });
 
             const response = await axios.post(
@@ -253,7 +255,15 @@ export default function RegisterForm() {
               ]}
               onPress={() => setRole("client")}
             >
-              <Text style={styles.roleButtonText}>Client</Text>
+              <Text
+                style={
+                  role === "client"
+                    ? styles.roleButtonTextActive
+                    : styles.roleButtonText
+                }
+              >
+                Client
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[
@@ -262,7 +272,15 @@ export default function RegisterForm() {
               ]}
               onPress={() => setRole("owner")}
             >
-              <Text style={styles.roleButtonText}>Salon Owner</Text>
+              <Text
+                style={
+                  role === "owner"
+                    ? styles.roleButtonTextActive
+                    : styles.roleButtonText
+                }
+              >
+                Salon Owner
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -295,23 +313,23 @@ export default function RegisterForm() {
               />
             ) : null}
             <View styles={styles.roleSelectionInput}>
-            <TextInput 
-              style={styles.input1}
-              placeholder="Name of the salon"
-              value={SalonN}
-              onChangeText={setSalonN}
-              autoCorrect={false}
-              autoCapitalize="none"
-            />
-            <TextInput
-              style={styles.input1}
-              placeholder="Address"
-              value={AddressS}
-              onChangeText={setAddressS}
-              autoCorrect={false}
-              autoCapitalize="none"
-            />
-                        </View>
+              <TextInput
+                style={styles.input1}
+                placeholder="Name of the salon"
+                value={SalonN}
+                onChangeText={setSalonN}
+                autoCorrect={false}
+                autoCapitalize="none"
+              />
+              <TextInput
+                style={styles.input1}
+                placeholder="Address"
+                value={AddressS}
+                onChangeText={setAddressS}
+                autoCorrect={false}
+                autoCapitalize="none"
+              />
+            </View>
 
             <Picker
               style={styles.inputPicker}
@@ -332,14 +350,12 @@ export default function RegisterForm() {
 
             <View style={styles.Times}>
               <View style={styles.picker}>
-              <TouchableOpacity style={[styles.TimeButtonOpen]} onPress={showOpenTimepicker}>
-                <Text
-                  style={styles.selectImageText}
-                  
+                <TouchableOpacity
+                  style={[styles.TimeButtonOpen]}
+                  onPress={showOpenTimepicker}
                 >
-                  OPEN TIME
-                </Text>
-              </TouchableOpacity>
+                  <Text style={styles.timeText}>OPEN TIME</Text>
+                </TouchableOpacity>
                 <Text>{openTime.toLocaleTimeString()}</Text>
                 {showOpenPicker && (
                   <DateTimePicker
@@ -352,14 +368,12 @@ export default function RegisterForm() {
                 )}
               </View>
               <View style={styles.picker}>
-              <TouchableOpacity style={[styles.TimeButtonClose]}                   onPress={showCloseTimepicker}
->
-                <Text
-                  style={styles.selectImageText}
+                <TouchableOpacity
+                  style={[styles.TimeButtonClose]}
+                  onPress={showCloseTimepicker}
                 >
-                  CLOSE TIME
-                </Text>
-              </TouchableOpacity>
+                  <Text style={styles.timeText}>CLOSE TIME</Text>
+                </TouchableOpacity>
                 <Text>{closeTime.toLocaleTimeString()}</Text>
                 {showClosePicker && (
                   <DateTimePicker
@@ -374,11 +388,11 @@ export default function RegisterForm() {
             </View>
             <Text style={styles.inputLabel}>Salon Services:</Text>
             <View style={styles.section}>
-              <FlatList 
+              <FlatList
                 data={services}
                 keyExtractor={(item) => item._id}
                 numColumns={7}
-                scrollEnabled={false} 
+                scrollEnabled={false}
                 renderItem={(post) => {
                   const item = post.item;
                   return (
@@ -394,7 +408,7 @@ export default function RegisterForm() {
                   );
                 }}
               />
-</View>
+            </View>
           </View>
         ) : null}
 
@@ -410,59 +424,62 @@ export default function RegisterForm() {
           <Image source={instagram} style={styles.icons} />
           <Image source={google} style={styles.icons} />
         </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          Already Have an Account?{" "}
-          
-        </Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Already Have an Account? </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={styles.signup}>Log In</Text>
           </TouchableOpacity>
-          </View>
+        </View>
       </ScrollView>
-      <Modal 
-                                style={{justifyContent:'center',alignItems:'center'}}
-                                animationType="slide"
-                                transparent={true}
-                                visible={modalVisible1}
-                                onRequestClose={() => {
-                                    console.log('Modal has been closed.');
-                                    setModalVisible1(!modalVisible1);
-                                  }}>
-
-                                    <View style={styles.containerModal}>
-                                      <Text style={styles.labelModal}  >Registration in progress. Please wait...</Text>
-                                    <ActivityIndicator  size="large" color="#ff007f" /> 
-                                      
-                                    </View>
-                  </Modal>
+      <Modal
+        style={{ justifyContent: "center", alignItems: "center" }}
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible1}
+        onRequestClose={() => {
+          console.log("Modal has been closed.");
+          setModalVisible1(!modalVisible1);
+        }}
+      >
+        <View style={styles.containerModal}>
+          <Text style={styles.labelModal}>
+            Registration in progress. Please wait...
+          </Text>
+          <ActivityIndicator size="large" color="#ff007f" />
+        </View>
+      </Modal>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
- containerModal: {
+  selectImageText: {
+    fontWeight: "bold",
+  },
+  timeText: {
+    color: "white",
+    fontWeight: "bold",
+  },
+  containerModal: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    alignItems: "center",
+    justifyContent: "center",
   },
-labelModal: {
+  labelModal: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
-    color:"white",
+    color: "white",
   },
-  footer:{
-    flexDirection:"row",
-    alignItems:"center",
-    paddingBottom:30
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingBottom: 30,
   },
-  roleSelectionImage:{
-  },
-  Scroll:{
-    alignItems:"center"
+  roleSelectionImage: {},
+  Scroll: {
+    alignItems: "center",
   },
   ViewImg: {
     width: 200,
@@ -471,20 +488,19 @@ labelModal: {
   },
   ImageV: {
     width: "80%",
-    height:200,
+    height: 200,
     alignSelf: "center",
-    marginBottom:10,
+    marginBottom: 10,
     borderRadius: 20,
   },
   buttonView: {
-    width:"100%"
-
+    width: "100%",
   },
   blockOwner: {
-    width:"100%"
+    width: "100%",
   },
   BlockRole: {
-    width:"100%"
+    width: "100%",
   },
   picker: {
     alignItems: "center",
@@ -493,10 +509,8 @@ labelModal: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal:"10%"
-
+    paddingHorizontal: "10%",
   },
-
 
   // CHECKBOX
   paragraph: {
@@ -513,15 +527,11 @@ labelModal: {
     marginBottom: 20,
     marginTop: 5,
     alignItems: "center",
-
   },
   row: {
     alignItems: "center",
-    marginLeft:3
-
+    marginLeft: 3,
   },
-
-  
 
   logoContainer: {
     marginTop: 50,
@@ -552,10 +562,9 @@ labelModal: {
     height: 50,
   },
   inputView: {
-    alignItems:'center',
+    alignItems: "center",
     marginBottom: 20,
     width: "16%",
-
   },
   input: {
     height: 50,
@@ -575,7 +584,7 @@ labelModal: {
     borderWidth: 1,
     borderRadius: 7,
     marginBottom: 10,
-    alignSelf:'center'
+    alignSelf: "center",
   },
   inputPicker: {
     borderColor: "#ff007f",
@@ -584,8 +593,8 @@ labelModal: {
     borderRadius: 700,
     marginBottom: 10,
     overflow: "hidden",
-    width:"80%",
-    alignSelf:"center"
+    width: "80%",
+    alignSelf: "center",
   },
   inputLabel: {
     fontSize: 16,
@@ -593,16 +602,13 @@ labelModal: {
     marginTop: 10,
     marginBottom: 5,
     paddingHorizontal: "10%",
-
-
   },
   inputLabelRole: {
     fontSize: 16,
     fontWeight: "bold",
     marginTop: 10,
     marginBottom: 5,
-    paddingHorizontal:"10%"
-
+    paddingHorizontal: "10%",
   },
   roleSelection: {
     flexDirection: "row",
@@ -610,16 +616,13 @@ labelModal: {
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: "10%",
-
-    
   },
   roleSelectionBlock: {
     flexDirection: "row",
     marginBottom: 10,
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal:"10%"
-
+    paddingHorizontal: "10%",
   },
   roleButton: {
     justifyContent: "center",
@@ -633,11 +636,12 @@ labelModal: {
   TimeButtonOpen: {
     justifyContent: "center",
     alignItems: "center",
-    borderColor: "green",
-    borderWidth: 1,
     borderRadius: 5,
     width: "100%",
     height: 40,
+    padding: 10,
+    backgroundColor: "rgba(100, 200, 44, 0.7)", // Light green with low opacity
+    paddingHorizontal: 20,
   },
   TimeButtonClose: {
     justifyContent: "center",
@@ -647,6 +651,9 @@ labelModal: {
     borderRadius: 5,
     width: "100%",
     height: 40,
+    padding: 10,
+    backgroundColor: "rgba(245, 0, 0, 0.7)",
+    paddingHorizontal: 20,
   },
   selectedRoleButton: {
     backgroundColor: "#ff007f",
@@ -655,7 +662,10 @@ labelModal: {
     color: "#000",
     fontWeight: "bold",
   },
-
+  roleButtonTextActive: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
   button: {
     backgroundColor: "#ff007f",
     height: 45,
@@ -663,9 +673,9 @@ labelModal: {
     borderWidth: 1,
     borderRadius: 5,
     alignItems: "center",
-    width:"80%",
+    width: "80%",
     justifyContent: "center",
-    alignSelf:"center"
+    alignSelf: "center",
   },
   buttonText: {
     color: "white",
@@ -693,8 +703,8 @@ labelModal: {
   footerText: {
     textAlign: "center",
     color: "gray",
-    alignItems:"center",
-    justifyContent:"center"
+    alignItems: "center",
+    justifyContent: "center",
   },
   signup: {
     color: "#ff007f",
