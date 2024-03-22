@@ -1,4 +1,4 @@
-![Alt text](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/coverPhotoFinal.jpeg?raw=true)
+![Alt text](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/CoverDesign.jpeg?raw=true)
 
 # 💅 Beauty Booking 💄
 
