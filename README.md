@@ -1,10 +1,10 @@
 ![Alt text](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/CoverDesign.jpeg?raw=true)
 
-# 💅 Beauty Booking 💄
+# Beauty Booking 💄
 
    Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
-# 🌟 App Features 🌟
+#  App Features 
 
 - *Effortless Account Creation and Management*
 - *Discover Exciting Salon Experiences*
@@ -13,7 +13,7 @@
 - *Manage Your Reservations with Ease*
 
 
-## 🎀 Getting Started 🎀
+##  Getting Started 
 
 ### Prerequisites
 To get started with Beauty Booking, you'll need:
@@ -40,15 +40,15 @@ Ready to glam up? Follow these simple steps:
    ```
    Voila! Your glam app is ready to shine. ✨
 
-## 💋 How to Use 💋
+## How to Use 
 
 1. **For Clients**: Discover, book, and slay your beauty appointments like a boss !
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
 
-## 🌈 Creative Contributions 🌈
+##  Creative Contributions 
 
 Even though this is a school project, I'm always open to magical ideas! If you have glittery thoughts to enhance the app, sprinkle your magic by forking the repository and sending me your fabulous contributions through pull requests. 💖
 
-## ✨ Contact Me✨
+## Contact Me
 
 [@MariamCHARRADA](https://github.com/MariamCHARRADA)
