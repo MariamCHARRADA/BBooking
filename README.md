@@ -1,33 +1,16 @@
+![Alt text](URL-of-the-image)
+
 # 💅 Beauty Booking 💄
 
    Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
 # 🌟 App Features 🌟
 
-- **Effortless Account Creation and Management:**
-
-Easily create and manage your account as a client or salon owner.
-Personalize your profile with unique details and preferences.
-
-- **Discover Exciting Salon Experiences:**
-
-Explore a variety of salon listings showcasing services, opening hours, and more.
-Find the perfect salon that matches your style and needs.
-
-- **Smart Search Options:**
-
-Seamlessly search for salons based on services or location.
-Discover new and trendy salons in your area or beyond.
-
-- **Convenient Booking and Scheduling:**
-
-Book appointments with just a few taps, choosing from available time slots.
-Plan your beauty sessions hassle-free and according to your schedule.
-
-- **Manage Your Reservations with Ease:**
-
-View and manage your upcoming salon reservations effortlessly.
-Stay organized and in control of your beauty appointments.
+- *Effortless Account Creation and Management*
+- *Discover Exciting Salon Experiences*
+- *Smart Search Options*
+- *Convenient Booking and Scheduling*
+- *Manage Your Reservations with Ease*
 
 
 ## 🎀 Getting Started 🎀
