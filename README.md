@@ -49,25 +49,21 @@ Ready to glam up? Follow these simple steps:
 
    - Discover, book, manage and slay your beauty appointments like a boss !
       <p >
-     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="150" />
-   <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="150" /> 
-     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="150" /> 
-      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/my%20reservations.jpeg?raw=true" width="150" />
-      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="150">
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="200" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="200" /> 
 
-   </p>
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/client%20profile.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/my%20reservations.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="200">
+
+     </p>
 
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
 
 ## Architecture
 
 <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Architecture%20Diagram.png?raw=true" width="400">
-
-The Beauty Booking app is structured into two main components:
-
-- _Frontend (Client-Side)_: Built with React Native, providing a user-friendly interface where clients can explore services, make reservations, and manage their bookings. The frontend communicates with the backend through RESTful APIs.
-
-- _Backend (Server-Side)_: Developed using Node.js and Express, the backend handles business logic, database operations, authentication, and API responses. It manages interactions with the MongoDB database, where all application data is stored and retrieved.
 
 Here's how these components work together:
 
