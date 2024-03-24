@@ -77,7 +77,9 @@ Ready to glam up? Follow these simple steps:
 <br><br>
 
 
-2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
+2. **For Salon Queens**: 
+
+   - Manage your kingdom, update salon details, and conquer the beauty world!
      <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/salon%20detail%20(flamingo).jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/update%20profile%20successfully.jpeg?raw=true" width="200" /> 
