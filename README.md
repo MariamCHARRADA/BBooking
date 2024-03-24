@@ -1,20 +1,19 @@
-# Beauty Booking 💄
-
-
 <p align="center">
   <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cover%20logo.png?raw=true" width="800"/>
 </p>
+# Beauty Booking 💄
+
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
-# App Features
+# App Features 🌟
 
-- _Effortless Account Creation and Management_
-- _Discover Exciting Salon Experiences_
-- _Smart Search Options_
-- _Convenient Booking and Scheduling_
-- _Manage Your Reservations with Ease_
+- _Effortless Account Creation and Management_ 📲
+- _Discover Exciting Salon Experiences_🧖🏽‍♀️
+- _Smart Search Options_ 🔍
+- _Convenient Booking and Scheduling_ 📅
+- _Manage Your Reservations with Ease_📝
 
-## Getting Started
+## Getting Started 🚀
 
 ### Prerequisites
 
@@ -23,8 +22,7 @@ To get started with Beauty Booking, you'll need:
 - A computer with internet access
 - Basic knowledge of Git and Node.js
 
-### Installation
-
+### Installation 📥
 Ready to glam up? Follow these simple steps:
 
 1. **Clone the repo**:
@@ -47,7 +45,9 @@ Ready to glam up? Follow these simple steps:
 
 ## How to Use
 
-  *Whether a **Client** or a **Salon Owner**, create your account and **Log in** :*
+*For **Clients** and **Salon Owners** alike, start by creating your account and logging in:*
+
+
   <br>
      <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Client.jpeg?raw=true" width="200" />
@@ -88,7 +88,7 @@ Ready to glam up? Follow these simple steps:
 
 
 
-## Architecture
+## Architecture 💁🏻‍♀️
    <p align="center">
    <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Architecture%20Diagram.png?raw=true" width="400">
    </p>
@@ -102,10 +102,10 @@ Here's how these components work together:
 
    -> This architecture ensures a separation of concerns, with the frontend focused on user interaction and the backend on data management and business logic.
 
-## Creative Contributions
+## Creative Contributions 💡
 
 Even though this is a school project, I'm always open to magical ideas! If you have glittery thoughts to enhance the app, sprinkle your magic by forking the repository and sending me your fabulous contributions through pull requests. 💖
 
-## Contact Me
+## Contact Me 📞
 
 [@MariamCHARRADA](https://github.com/MariamCHARRADA)
