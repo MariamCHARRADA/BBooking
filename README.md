@@ -1,18 +1,17 @@
    ![cover](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/Screenshot%20from%202024-03-24%2017-13-34.png?raw=true)
 # BBooking ✨
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
----
-## Outline
 
-- [Beauty Booking](#bbooking-) - Overview of the app.
-- [BB Story, Short and Sweet](#bb-story-short-and-sweet-) - The inspiration and creation of Beauty Booking.
-- [App Features](#app-features-) - Key features of the app.
-- [Getting Started](#getting-started-) - How to get started with the app, including prerequisites and installation instructions.
-- [How to Use](#how-to-use) - Detailed guide on using the app for clients and salon owners.
-- [Architecture](#architecture-) - Explanation of the app's technical architecture.
-- [License](#license-) - Licensing information for Beauty Booking.
-- [Creative Contributions](#creative-contributions-) - Invitation for contributions to the project.
-- [Contact Me](#contact-me-) - Contact information for reaching out to Mariam.
+<br>
+## Outline 🌸
+
+- 🌸 [Beauty Booking](#bbooking-) 
+- 🌸🌸[BB Story, Short and Sweet](#bb-story-short-and-sweet-) 
+- 🌸🌸🌸[Getting Started](#getting-started-) 
+- 🌸🌸🌸🌸[How to Use](#how-to-use) 
+- 🌸🌸🌸🌸🌸[Architecture](#architecture-) 
+- 🌸🌸🌸🌸🌸🌸[Creative Contributions](#creative-contributions-) 
+- 🌸🌸🌸🌸🌸🌸🌸🌸[Contact Me](#contact-me-) 
 
 
 ## BB Story, Short and Sweet 💁🏻‍♀️✨
@@ -21,7 +20,8 @@ You know the drill: trying to book a hair appointment meant calling salon after 
 So, I thought, "Why does getting a trim have to be *this* complicated??" <br>
 Booking a haircut or a brushing should be as easy as ordering pizza, right? 🍕💇‍♀️
 
-That's when the idea hit me: what if there's an app that zaps away the hassle, like a beauty superhero for those bad hair days? <br>
+That's when the idea hit me: <br>
+what if there's an app that zaps away the hassle, like _a Beauty Superhero_ for those _Bad Hair Days_? <br>
 And voilà, **Beauty Booking was born!** <br>
  Now, snagging that perfect salon slot is a few taps away, no more phone juggling or schedule squeezing. 
  <br>
