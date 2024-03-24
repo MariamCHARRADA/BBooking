@@ -75,24 +75,29 @@ const getAvailabilityForSalon = asyncHandler(async (req, res) => {
   const { salonId } = req.params;
   const { date } = req.query;
 
+  // Find the salon by its ID
   const salon = await Salon.findById(salonId);
   if (!salon) {
     return res.status(404).json({ message: "Salon not found" });
   }
 
+  // Get salon's opening and closing hours
   const openHour = salon.Open.getHours();
   const closeHour = salon.Close.getHours() === 0 ? 24 : salon.Close.getHours();
 
+  // Define the date range for checking availability
   let selectedDate = new Date(date);
   selectedDate.setHours(0, 0, 0, 0);
   let nextDay = new Date(selectedDate);
   nextDay.setDate(nextDay.getDate() + 1);
 
+  // Find existing reservations for the salon on the specified date
   const reservations = await Reservation.find({
     Salon: salonId,
     Date: { $gte: selectedDate, $lt: nextDay },
   });
 
+  // Generate a list of available time slots based on the salon's hours and existing reservations
   let slots = [];
   for (let hour = openHour; hour < closeHour; hour++) {
     let timeSlot = `${hour < 10 ? "0" + hour : hour}:00`;

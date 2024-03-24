@@ -103,6 +103,9 @@ const getSalon = asyncHandler(async (req, res) => {
   }
 });
 
+//@desc Get all salons of a user
+//@route GET /api/salons/user/:userId
+//@access Private
 const getUserSalon = asyncHandler(async (req, res) => {
   try {
     const userId = req.params.id;
@@ -114,6 +117,7 @@ const getUserSalon = asyncHandler(async (req, res) => {
     console.log("error ", e);
   }
 });
+
 //@desc Update a salon
 //@route PUT /api/salons/:id
 //@access Private
