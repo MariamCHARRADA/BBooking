@@ -1,17 +1,18 @@
    ![cover](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/Screenshot%20from%202024-03-24%2017-13-34.png?raw=true)
-# BBooking ✨
+# BBooking 🌸✨
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
 <br>
+
 ## Outline 🌸
 
-- 🌸 [Beauty Booking](#bbooking-) 
-- 🌸🌸[BB Story, Short and Sweet](#bb-story-short-and-sweet-) 
-- 🌸🌸🌸[Getting Started](#getting-started-) 
-- 🌸🌸🌸🌸[How to Use](#how-to-use) 
-- 🌸🌸🌸🌸🌸[Architecture](#architecture-) 
-- 🌸🌸🌸🌸🌸🌸[Creative Contributions](#creative-contributions-) 
-- 🌸🌸🌸🌸🌸🌸🌸🌸[Contact Me](#contact-me-) 
+- [Beauty Booking](#bbooking-) 🌸
+- [BB Story, Short and Sweet](#bb-story-short-and-sweet-) 🌸
+- [Getting Started](#getting-started-) 🌸
+- [How to Use](#how-to-use) 🌸
+- [Architecture](#architecture-) 🌸
+- [Creative Contributions](#creative-contributions-) 🌸
+- [Contact Me](#contact-me-) 🌸
 
 
 ## BB Story, Short and Sweet 💁🏻‍♀️✨
@@ -26,7 +27,7 @@ And voilà, **Beauty Booking was born!** <br>
  Now, snagging that perfect salon slot is a few taps away, no more phone juggling or schedule squeezing. 
  <br>
 
-# App Features ✨
+# App Features 🌸✨
 
 - _Effortless Account Creation and Management_ 📲
 - _Discover Exciting Salon Experiences_🧖🏽‍♀️
@@ -34,7 +35,7 @@ And voilà, **Beauty Booking was born!** <br>
 - _Convenient Booking and Scheduling_ 📅
 - _Manage Your Reservations with Ease_📝
 
-## Getting Started 🚀
+## Getting Started 🌸
 
 ### Prerequisites 📋
 
@@ -64,7 +65,7 @@ Ready to glam up? Follow these simple steps:
    ```
    Voila! Your glam app is ready to shine. ✨
 
-## How to Use
+## How to Use 🌸
 
 *For **Clients** and **Salon Owners** alike, start by creating your account and logging in:*
 
