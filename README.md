@@ -1,6 +1,6 @@
 # Beauty Booking 💄
 
-![Alt text](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/CoverPhoto.jpeg?raw=true)
+![Alt text](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/logo3.png?raw=true)
 
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
@@ -45,6 +45,16 @@ Ready to glam up? Follow these simple steps:
 
 ## How to Use
 
+  **Whether a client or a salon owner, create your account and log in:**
+        <p float="center">
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Client.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Salon%20Owner.jpeg?raw=true" width="200" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/Date&Time%20Picker.jpeg?raw=true" width="200" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/login%20screen.jpeg?raw=true" width="200" />
+
+     </p>
+
+
 1. **For Clients**:
 
    - Discover, book, manage and slay your beauty appointments like a boss !
@@ -56,10 +66,18 @@ Ready to glam up? Follow these simple steps:
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/client%20profile.jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/my%20reservations.jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="200">
-
      </p>
 
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
+      <p >
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="200" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="200" /> 
+
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/client%20profile.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/my%20reservations.jpeg?raw=true" width="200" />
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="200">
+     </p>
 
 ## Architecture
 
