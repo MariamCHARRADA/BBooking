@@ -3,9 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
-//@desc Register a user
-//@route POST /api/users/register
-//@access public
+//@desc Get all users
 const getUsers = asyncHandler(async (req, res) => {
   try {
     const users = await User.find();
@@ -14,6 +12,10 @@ const getUsers = asyncHandler(async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+//@desc Register a user
+//@route POST /api/users/register
+//@access public
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password, role } = req.body;
   if (!username || !email || !password || !role) {
@@ -26,11 +28,8 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User already registered!");
   }
 
-  //create new user
-
   //hash password:
   const hashedPassword = await bcrypt.hash(password, 10);
-  console.log(hashedPassword);
 
   //create user:
   const user = await User.create({
@@ -40,7 +39,6 @@ const registerUser = asyncHandler(async (req, res) => {
     role,
   });
 
-  console.log(`User created ${user}`);
   if (user) {
     res.status(201).json({ user: user });
   } else {
@@ -60,7 +58,7 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("All fields are mandatory!");
   }
   const user = await User.findOne({ email });
-  //compare password with hashedpassword
+  //compare password with hashed password
   if (user && (await bcrypt.compare(password, user.password))) {
     const accessToken = jwt.sign(
       {

@@ -106,7 +106,6 @@ export default function SalonDetail({ route }) {
       setSelectedTime(null);
       setSelectedService(null);
       setShowServiceModal(false);
-
     } catch (error) {
       console.error("Error creating reservation:", error);
     }
@@ -243,20 +242,20 @@ export default function SalonDetail({ route }) {
                 </TouchableOpacity>
               )}
             />
-                    <View style={{ paddingHorizontal: 10, paddingVertical: 10 }}>
-          {selectedService && (
-            <TouchableOpacity
-              onPress={createReservation}
-              style={styles.bookButton}
-            >
-              <Text style= {{ color: "white", fontWeight: "bold"}}>Book Now</Text>
-            </TouchableOpacity>
-          )}
-        </View>
+            <View style={{ paddingHorizontal: 10, paddingVertical: 10 }}>
+              {selectedService && (
+                <TouchableOpacity
+                  onPress={createReservation}
+                  style={styles.bookButton}
+                >
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    Book Now
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </View>
           </View>
-          
         </Modal>
-
       </ScrollView>
     </View>
   );
@@ -377,7 +376,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     alignSelf: "center",
-    shadowOffset: {width: 3, height: 3},
+    shadowOffset: { width: 3, height: 3 },
     elevation: 5,
     padding: 10,
     alignItems: "center",
