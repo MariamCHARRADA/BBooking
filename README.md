@@ -47,9 +47,9 @@ Ready to glam up? Follow these simple steps:
 1. **For Clients**: 
    - Discover, book, manage and slay your beauty appointments like a boss !
    <p float="left">
-  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="400" />
-    <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="400" /> 
-  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="400" /> 
+  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="50" />
+    <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="50" /> 
+  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="50" /> 
 </p>
 
 
