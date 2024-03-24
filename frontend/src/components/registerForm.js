@@ -382,7 +382,7 @@ export default function RegisterForm() {
                     is24Hour={true}
                     display="default"
                     onChange={onCloseTimeChange}
-                  />
+                    />
                 )}
               </View>
             </View>
