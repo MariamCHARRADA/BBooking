@@ -55,7 +55,10 @@ Ready to glam up? Follow these simple steps:
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/login%20screen.jpeg?raw=true" width="200" />
      </p>
 
----
+<br>
+<br><br>
+
+
 
 1. **For Clients**:
 
@@ -70,7 +73,9 @@ Ready to glam up? Follow these simple steps:
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="200">
      </p>
 
----
+
+<br>
+<br><br>
 
 
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
@@ -80,7 +85,9 @@ Ready to glam up? Follow these simple steps:
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/update%20profile%20-%20Salon%20Owner.jpeg?raw=true" width="200" /> 
      </p>
 
----
+<br><br>
+
+
 
 ## Architecture
    <p align="center">
