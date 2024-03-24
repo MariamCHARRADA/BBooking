@@ -27,6 +27,8 @@ const ReservationSchema = mongoose.Schema({
   }
 });
 
+// Creates a compound index on Service and Time fields to ensure that 
+// there can be no duplicate reservations for the same service at the same time
 ReservationSchema.index({ Service: 1, Time: 1 }, { unique: true });
 
 module.exports = mongoose.model('Reservation', ReservationSchema);
