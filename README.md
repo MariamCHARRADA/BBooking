@@ -1,8 +1,5 @@
    # Beauty Booking 💄
-   
-   <p align="center">
-    <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cover%20logo.png?raw=true" width="800"/>
-   </p>
+   ![cover](https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/Screenshot%20from%202024-03-24%2017-13-34.png?raw=true)
 
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
