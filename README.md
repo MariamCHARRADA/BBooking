@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/logo3.png?raw=true" width="200"/>
+  <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/frontend/Screenshots/cover%20logo.png?raw=true" width="200"/>
 </p>
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
@@ -47,7 +47,8 @@ Ready to glam up? Follow these simple steps:
 
 ## How to Use
 
-  **Whether a client or a salon owner, create your account and log in:**
+  *Whether a **Client** or a **Salon Owner**, create your account and **Log in** :*
+  <br>
      <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Client.jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Salon%20Owner.jpeg?raw=true" width="200" /> 
@@ -57,8 +58,6 @@ Ready to glam up? Follow these simple steps:
 
 <br>
 <br><br>
-
-
 
 1. **For Clients**:
 
