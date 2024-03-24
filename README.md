@@ -3,12 +3,7 @@
 
 <p align="center">
   <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/logo3.png?raw=true" width="300"/>
-     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/backend/uploads/logo3.png?raw=true
-   " width="600" float="center"/>
 </p>
-
-
-
 Beauty Booking is an app designed to simplify the process of finding and booking beauty services. It connects clients with salons and beauty professionals, offering a comprehensive listing of services and real-time scheduling.
 
 # App Features
@@ -53,7 +48,7 @@ Ready to glam up? Follow these simple steps:
 ## How to Use
 
   **Whether a client or a salon owner, create your account and log in:**
-        <p float="center">
+     <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Client.jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/register%20-%20Salon%20Owner.jpeg?raw=true" width="200" /> 
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/Date&Time%20Picker.jpeg?raw=true" width="200" /> 
@@ -64,7 +59,7 @@ Ready to glam up? Follow these simple steps:
 1. **For Clients**:
 
    - Discover, book, manage and slay your beauty appointments like a boss !
-      <p >
+     <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="200" /> 
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="200" /> 
@@ -78,7 +73,7 @@ Ready to glam up? Follow these simple steps:
 
 
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
-      <p float="center">
+     <p align="center">
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/salon%20detail%20(flamingo).jpeg?raw=true" width="200" />
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/update%20profile%20successfully.jpeg?raw=true" width="200" /> 
      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/update%20profile%20-%20Salon%20Owner.jpeg?raw=true" width="200" /> 
