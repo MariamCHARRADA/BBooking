@@ -49,16 +49,19 @@ Ready to glam up? Follow these simple steps:
 
    - Discover, book, manage and slay your beauty appointments like a boss !
       <p >
-     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="100" />
-       <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="100" /> 
-     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="100" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/home%20screen.jpeg?raw=true" width="150" />
+   <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/time%20slots.jpeg?raw=true" width="150" /> 
+     <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/services%20slots.jpeg?raw=true" width="150" /> 
+      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/my%20reservations.jpeg?raw=true" width="150" />
+      <img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Screenshots/cancel%20reservation.jpeg?raw=true" width="150">
+
    </p>
 
 2. **For Salon Queens**: Manage your kingdom, update salon details, and conquer the beauty world!
 
 ## Architecture
-<img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Architecture%20Diagram.png?raw=true" width="600">
 
+<img src="https://github.com/MariamCHARRADA/BeautyBooking/blob/main/Architecture%20Diagram.png?raw=true" width="400">
 
 The Beauty Booking app is structured into two main components:
 
