@@ -30,10 +30,10 @@ And voilà, **Beauty Booking was born!** <br>
 # App Features 🌸✨
 
 - _Effortless Account Creation and Management_ 📲
-- _Discover Exciting Salon Experiences_🧖🏽‍♀️
+- _Discover Exciting Salon Experiences_ 🧖🏽‍♀️
 - _Smart Search Options_ 🔍
 - _Convenient Booking and Scheduling_ 📅
-- _Manage Your Reservations with Ease_📝
+- _Manage Your Reservations with Ease_ 📝
 
 ## Getting Started 🌸
 
